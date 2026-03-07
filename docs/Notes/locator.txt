@@ -1,0 +1,92 @@
+1. Cấu trúc của HTML
++ Cấu trúc cơ bản của một trang HTML thường gồm các phần chính sau:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tiêu đề trang</title>
+</head>
+<body>
+    Nội dung trang web
+</body>
+</html>
+
+1. <!DOCTYPE html>
+
+Khai báo loại tài liệu HTML.
+
+Cho trình duyệt biết trang này sử dụng chuẩn HTML5.
+
+Luôn đặt ở dòng đầu tiên của file.
+
+2. <html> ... </html>
+
+Là thẻ gốc (root element) của toàn bộ trang HTML.
+
+Mọi thành phần khác đều nằm bên trong thẻ này.
+
+Ví dụ:
+
+<html>
+    ...
+</html>
+3. <head> ... </head>
+
+Phần metadata của trang (không hiển thị trực tiếp trên web).
+
+Thường chứa:
+
+<title>: tiêu đề tab trình duyệt
+
+<meta>: thông tin charset, SEO
+
+<link>: liên kết CSS
+
+<script>: JavaScript
+
+Ví dụ:
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Website</title>
+</head>
+4. <body> ... </body>
+
+Phần hiển thị nội dung chính của trang web.
+
+Có thể chứa:
+
+Tiêu đề: <h1> → <h6>
+
+Đoạn văn: <p>
+
+Hình ảnh: <img>
+
+Liên kết: <a>
+
+Danh sách: <ul>, <ol>
+
+Bảng: <table>
+
+Form: <form>
+
+Ví dụ:
+
+<body>
+    <h1>Hello World</h1>
+    <p>This is my first HTML page.</p>
+</body>
+5. Sơ đồ cấu trúc HTML
+HTML
+│
+├── head
+│   ├── meta
+│   ├── title
+│   └── link / script
+│
+└── body
+    ├── header
+    ├── main
+    │   ├── section
+    │   └── article
+    └── footer
