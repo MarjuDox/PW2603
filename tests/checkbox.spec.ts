@@ -22,13 +22,17 @@ test('checkbox using CSS locators', async ({ page }) => {
 });
 
 
-// Xpath locators
+// XPath locators
 test('checkbox using XPath locators', async ({ page }) => {
   await page.goto('https://the-internet.herokuapp.com/checkboxes');
-  await page.locator('//input[@type]="checkbox")').fill('checkbox 1');
-  await page.locator('//input[@type]="checkbox")').nth(1).uncheck();
-  await page.locator('//input[@type]="checkbox")').nth(1).check();
-  await expect(page.locator('//input[@type]="checkbox")')).toContainText('checkbox 1 checkbox 2');
+
+  const checkboxes = page.locator('//input[@type="checkbox"]');
+
+  await checkboxes.first().check();
+  await expect(checkboxes.first()).toBeChecked();
+
+  await checkboxes.nth(1).uncheck();
+  await expect(checkboxes.nth(1)).not.toBeChecked();
 });
 
 // Xpath locators with attribute
