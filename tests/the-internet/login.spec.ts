@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('login success', async ({ page }) => {
-  await page.goto('https://the-internet.herokuapp.com/login');
+  await page.goto('/login');
   await page.getByRole('textbox', { name: 'Username' }).fill('tomsmith');
   await page.getByRole('textbox', { name: 'Password' }).fill('SuperSecretPassword!');
   await page.getByRole('button', { name: 'Login' }).click();
@@ -9,7 +9,7 @@ test('login success', async ({ page }) => {
 });
 
 test('login success using CSS locators', async ({ page }) => {
-  await page.goto('https://the-internet.herokuapp.com/login');
+  await page.goto('/login');
   await page.locator('#username').fill('tomsmith'); // 
   await page.locator('#password').fill('SuperSecretPassword!');
   await page.locator('button[type="submit"]').click();
@@ -18,7 +18,7 @@ test('login success using CSS locators', async ({ page }) => {
 });
 
 test('login success using XPath locators', async ({ page }) => {
-  await page.goto('https://the-internet.herokuapp.com/login');
+  await page.goto('/login');
   await page.locator('//input[@id="username"]').fill('tomsmith'); //tìm tag + attribute
   await page.locator('//*[@id="password"]').fill('SuperSecretPassword!'); // tìm tất cả các tag có attribute id = password
   await page.locator('//button[@type="submit"]').click();

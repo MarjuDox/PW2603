@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Verify the system return all maximum due from table 1 is Jason Doe', async ({ page }) => {
-  await page.goto('https://the-internet.herokuapp.com/tables');
+  await page.goto('/tables');
   const table = page.locator('#table1');
 
   const rows = await table.evaluate((tbl) => {
@@ -39,7 +39,7 @@ test('Verify the system return all maximum due from table 1 is Jason Doe', async
 
 
 test('Verify the system return all minimum due from table 1 is John Smith, Tim Conway', async ({ page }) => {
-  await page.goto('https://the-internet.herokuapp.com/tables');
+  await page.goto('/tables');
   const table = page.locator('#table1');
 
   const rows = await table.evaluate((tbl) => {
