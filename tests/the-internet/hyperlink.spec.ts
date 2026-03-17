@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 
+// Normally step 
 test('has title', async ({ page }) => {
   await page.goto('/status_codes');
   
@@ -29,7 +30,7 @@ test('has title', async ({ page }) => {
 
 });
 
-
+// Enhance the clean code using array
 test('status codes links navigate correctly', async ({ page }) => {
     await page.goto('/');
     // Open the Status Codes page
