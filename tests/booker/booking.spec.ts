@@ -165,7 +165,6 @@ test("PATCH partially update a booking", async ({request}) => {
 
     expect(response.status()).toBe(200);
     const updatedBookingResponse = await response.json();
-    console.log(updatedBookingResponse);
     expect(updatedBookingResponse.totalprice).toBe(partialUpdatePayload.totalprice);
     expect(updatedBookingResponse.additionalneeds).toBe(partialUpdatePayload.additionalneeds);
 });
