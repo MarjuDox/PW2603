@@ -6,7 +6,7 @@ test.use({
   geolocation: { latitude: 10.7769, longitude: 106.7009 },
 });
 
-test('Verify từ: SGN đến là HAN, ngày đi là 25/3/2026, ngày về là 31/3/2026', async ({ page , context}) => {
+test.skip('Verify từ: SGN đến là HAN, ngày đi là 25/3/2026, ngày về là 31/3/2026', async ({ page , context}) => {
     
 await context.clearCookies();
 

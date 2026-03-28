@@ -13,17 +13,25 @@ const bookingSchema = z.object({
     additionalneeds: z.string().optional(),
 }); 
 
-// test('Get booking by ID', async ({request }) => {
-//      const response = await request.get('https://restful-booker.herokuapp.com/booking/1');
-//     expect(response.status()).toBe(200);
-//     const booking = await response.json();
-//     expect(() => bookingSchema.parse(booking)).not.toThrow();
+test('Get booking by ID', async ({request }) => {
+    // Get the list of bookings
+    const bookingsResponse = await request.get('https://restful-booker.herokuapp.com/booking');
+    expect(bookingsResponse.status()).toBe(200);
+    const bookings = await bookingsResponse.json();
 
-//     const { firstname, lastname } = booking;
+    const bookingIds = bookings.map((booking: { bookingid: number }) => booking.bookingid);
+    const randomBookingId = bookingIds[1];
 
-//     expect(firstname).toBe('Jane');
-//     expect(lastname).toBe('Jackson');
-// })
+    const response = await request.get(`https://restful-booker.herokuapp.com/booking/${randomBookingId}`);
+    expect(response.status()).toBe(200);
+    const booking = await response.json();
+    expect(() => bookingSchema.parse(booking)).not.toThrow();
+
+    const { firstname, lastname } = booking;
+
+    expect(firstname).toBe('Jim');
+    expect(lastname).toBe('Brown');
+})
 
 // const newBookingSchema = z.object({
 //     bookingid: z.number(),
