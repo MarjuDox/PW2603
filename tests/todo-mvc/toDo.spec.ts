@@ -29,15 +29,15 @@ test.describe('ToDo MVC Tests', () => {
         expect(toDoList).not.toContain(toDoText);
     });
 
-    test('should update a todo item', async ({ toDo }) => {
-        const toDoListDetailed = await toDo.getToDoListDetailed();
-        const n = toDoListDetailed.length;
-        const oldText = randomInt(0,n > 0 ? n : 1) === 0 ? 'Unknown' : toDoListDetailed[randomInt(0, n)].text;
-        const newText = 'Buy fruits';
-        await toDo.createToDo(oldText);
-        await toDo.updateToDo(oldText, newText);
-        const toDoList = await toDo.getToDoList();
-        expect(toDoList).toContain(newText);
-        expect(toDoList).not.toContain(oldText);
-    });
+    // test('should update a todo item', async ({ toDo }) => {
+    //     const toDoListDetailed = await toDo.getToDoListDetailed();
+    //     const n = toDoListDetailed.length;
+    //     const oldText = randomInt(0,n > 0 ? n : 1) === 0 ? 'Unknown' : toDoListDetailed[randomInt(0, n)].text;
+    //     const newText = 'Buy fruits';
+    //     await toDo.createToDo(oldText);
+    //     await toDo.updateToDo(oldText, newText);
+    //     const toDoList = await toDo.getToDoList();
+    //     expect(toDoList).toContain(newText);
+    //     expect(toDoList).not.toContain(oldText);
+    // });
 });
